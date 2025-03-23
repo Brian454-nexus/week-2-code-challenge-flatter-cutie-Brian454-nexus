@@ -61,3 +61,8 @@ function setupVoteForm() {
     if (currentCharacter && !isNaN(additionalVotes)) {
         // Add the new votes to the current character's total
       currentCharacter.votes += additionalVotes;
+
+      // Update the displayed votes in the detailed-info div
+      const votesDisplay = document.querySelector("#detailed-info h4");
+      votesDisplay.innerText = `Total Votes: ${currentCharacter.votes}`;
+    }
