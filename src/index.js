@@ -151,3 +151,12 @@ function setupVoteFormWithPersistence() {
     voteForm.reset();
   });
 }
+
+// Modified character form handler to save to the server
+function setupCharacterFormWithPersistence() {
+    const characterForm = document.querySelector("#character-form");
+    characterForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.querySelector("#name").value;
+      const image = document.querySelector("#image-url").value;
+      const newCharacter = { name, image, votes: 0 };
