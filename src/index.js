@@ -160,3 +160,12 @@ function setupCharacterFormWithPersistence() {
       const name = document.querySelector("#name").value;
       const image = document.querySelector("#image-url").value;
       const newCharacter = { name, image, votes: 0 };
+
+      // Save the new character to the server with a POST request
+    fetch(`${BASE_URL}/characters`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newCharacter),
+      })
+        .then((response) => response.json())
+        .then((savedCharacter) => {
