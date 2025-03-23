@@ -76,3 +76,7 @@ function setupVoteForm() {
 document.addEventListener("DOMContentLoaded", () => {
     // Load all characters into the character bar
   loadCharacters();
+
+  // Set up the vote form functionality
+  setupVoteForm();
+});
