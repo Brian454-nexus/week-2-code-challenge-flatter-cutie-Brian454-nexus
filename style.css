@@ -1,13 +1,14 @@
 html {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
-.logo{
+.logo {
   text-align: center;
   background-color: rgb(49, 109, 179);
   color: white;
@@ -35,7 +36,7 @@ html, body {
   border: 1px solid white;
 }
 
-.characterInfo{
+.characterInfo {
   height: 550px;
   padding: 30px;
   font-size: 24px;
@@ -43,19 +44,67 @@ html, body {
   text-align: center;
 }
 
-input[type="submit"], button {
+input[type="submit"],
+button {
   background-color: rgb(49, 109, 179);
   color: white;
   font-size: 18px;
   border-radius: 6px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 input[type="text"] {
   font-size: 3vh;
 }
 
-#image{
+#image {
   width: 300px;
   height: 300px;
+}
+
+/* Style for the Add New Character form */
+.character-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em; /* Reduced gap between elements */
+  margin: 1em auto; /* Center the form horizontally */
+  padding: 1em;
+  width: 300px; /* Set a medium width for the form */
+  border: 1px solid rgb(49, 109, 179);
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better aesthetics */
+}
+
+.character-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.character-form label {
+  font-size: 1em; /* Slightly smaller font size */
+  margin-bottom: 0.3em; /* Reduced spacing below labels */
+  color: rgb(49, 109, 179);
+}
+
+.character-form input[type="text"] {
+  padding: 0.4em; /* Reduced padding for input fields */
+  font-size: 0.9em; /* Slightly smaller font size */
+  border: 1px solid rgb(49, 109, 179);
+  border-radius: 4px;
+}
+
+.character-form .add-character-btn {
+  padding: 0.5em; /* Reduced padding for the button */
+  font-size: 0.9em; /* Slightly smaller font size */
+  background-color: rgb(49, 109, 179);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.character-form .add-character-btn:hover {
+  background-color: rgb(30, 80, 150);
 }
