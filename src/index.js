@@ -14,3 +14,6 @@ function loadCharacters() {
     .then((characters) => {
         // Loop through each character in the array
       characters.forEach((character) => {
+        // Create a span element for the character's name
+        const span = document.createElement("span");
+        span.innerText = character.name; // Set the character's name as text
