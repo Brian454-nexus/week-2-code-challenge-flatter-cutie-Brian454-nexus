@@ -77,6 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load all characters into the character bar
   loadCharacters();
 
+  // Set up the reset button functionality
+   setupResetButton();
+   setupCharacterForm();
+
   // Set up the vote form functionality
   setupVoteForm();
 });
@@ -120,3 +124,10 @@ function setupCharacterForm() {
     characterForm.reset();
   });
 }
+
+// Modified vote form handler to update votes on the server
+function setupVoteFormWithPersistence() {
+    const voteForm = document.querySelector("#votes-form");
+    voteForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const additionalVotes = parseInt(document.querySelector("#votes").value);
