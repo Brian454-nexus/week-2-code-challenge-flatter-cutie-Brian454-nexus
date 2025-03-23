@@ -35,3 +35,11 @@ function showCharacterDetails(character) {
 
   // Select the detailed-info div where details will be shown
   const detailedInfo = document.querySelector("#detailed-info");
+
+  // Update the div with the character's details
+  detailedInfo.innerHTML = `
+    <p>${character.name}</p>
+    <img src="${character.image}" alt="${character.name}">
+    <h4>Total Votes: ${character.votes}</h4>
+  `;
+}
