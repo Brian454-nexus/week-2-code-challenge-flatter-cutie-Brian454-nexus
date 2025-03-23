@@ -32,3 +32,6 @@ function loadCharacters() {
 function showCharacterDetails(character) {
     // Update the currentCharacter so we know who is being displayed
   currentCharacter = character;
+
+  // Select the detailed-info div where details will be shown
+  const detailedInfo = document.querySelector("#detailed-info");
