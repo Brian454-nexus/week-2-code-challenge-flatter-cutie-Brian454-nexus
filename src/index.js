@@ -115,3 +115,8 @@ function setupCharacterForm() {
 
     // Immediately show the new character's details
     showCharacterDetails(newCharacter);
+
+    // Clear the form
+    characterForm.reset();
+  });
+}
