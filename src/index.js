@@ -20,3 +20,10 @@ function loadCharacters() {
 
         // Add click event to show details when the span is clicked
         span.addEventListener("click", () => showCharacterDetails(character));
+
+        // Add the span to the character-bar div
+        characterBar.appendChild(span);
+      });
+    })
+    .catch((error) => console.error("Error fetching characters:", error)); // Log any errors
+}
