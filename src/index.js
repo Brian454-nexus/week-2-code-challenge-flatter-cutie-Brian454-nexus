@@ -105,3 +105,10 @@ function setupCharacterForm() {
 
     // Create a new character object
     const newCharacter = { name, image, votes: 0 };
+
+    // Add the new character to the character bar
+    const characterBar = document.querySelector("#character-bar");
+    const span = document.createElement("span");
+    span.innerText = newCharacter.name;
+    span.addEventListener("click", () => showCharacterDetails(newCharacter));
+    characterBar.appendChild(span);
