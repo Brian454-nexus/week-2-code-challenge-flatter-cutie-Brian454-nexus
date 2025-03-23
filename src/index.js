@@ -7,3 +7,8 @@ let currentCharacter = null;
 function loadCharacters() {
     // Select the character-bar div where names will be displayed
   const characterBar = document.querySelector("#character-bar");
+
+  // Fetch character data from the server
+  fetch(`${BASE_URL}/characters`)
+    .then((response) => response.json()) // Convert response to JSON
+    .then((characters) => {
