@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Set up the reset button functionality
    setupResetButton();
-   setupCharacterForm();
+   setupCharacterFormWithPersistence();
 
   // Set up the vote form functionality
-  setupVoteForm();
+  setupVoteFormWithPersistence();
 });
 
 // Function to reset votes when the reset button is clicked
