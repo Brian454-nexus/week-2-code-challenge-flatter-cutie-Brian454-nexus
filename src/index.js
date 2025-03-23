@@ -27,3 +27,6 @@ function loadCharacters() {
     })
     .catch((error) => console.error("Error fetching characters:", error)); // Log any errors
 }
+
+// Function to display a character's details in the detailed-info div
+function showCharacterDetails(character) {
