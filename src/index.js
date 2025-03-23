@@ -56,3 +56,6 @@ function setupVoteForm() {
     // Get the number of votes from the input field
     const votesInput = document.querySelector("#votes");
     const additionalVotes = parseInt(votesInput.value); // Convert input to a number
+
+    // Check if a character is selected and the input is valid
+    if (currentCharacter && !isNaN(additionalVotes)) {
