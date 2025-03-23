@@ -92,3 +92,9 @@ function setupResetButton() {
       }
     });
   }
+
+  // Function to handle adding a new character via the character form
+function setupCharacterForm() {
+    const characterForm = document.querySelector("#character-form");
+    characterForm.addEventListener("submit", (e) => {
+      e.preventDefault(); // Stop form from refreshing
