@@ -169,3 +169,9 @@ function setupCharacterFormWithPersistence() {
       })
         .then((response) => response.json())
         .then((savedCharacter) => {
+            // Add the saved character (with ID) to the character bar
+        const characterBar = document.querySelector("#character-bar");
+        const span = document.createElement("span");
+        span.innerText = savedCharacter.name;
+        span.addEventListener("click", () => showCharacterDetails(savedCharacter));
+        characterBar.appendChild(span);
