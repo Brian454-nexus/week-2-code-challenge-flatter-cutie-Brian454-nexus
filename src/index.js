@@ -71,3 +71,6 @@ function setupVoteForm() {
     voteForm.reset();
   });
 }
+
+// Run these functions when the page loads
+document.addEventListener("DOMContentLoaded", () => {
