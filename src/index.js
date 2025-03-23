@@ -102,3 +102,6 @@ function setupCharacterForm() {
       // Get the name and image from the form inputs
     const name = document.querySelector("#name").value;
     const image = document.querySelector("#image-url").value;
+
+    // Create a new character object
+    const newCharacter = { name, image, votes: 0 };
