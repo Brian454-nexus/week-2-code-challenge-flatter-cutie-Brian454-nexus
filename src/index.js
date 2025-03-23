@@ -175,3 +175,12 @@ function setupCharacterFormWithPersistence() {
         span.innerText = savedCharacter.name;
         span.addEventListener("click", () => showCharacterDetails(savedCharacter));
         characterBar.appendChild(span);
+
+        // Show the saved character's details
+        showCharacterDetails(savedCharacter);
+      })
+      .catch((error) => console.error("Error adding character:", error));
+
+    characterForm.reset();
+  });
+}
