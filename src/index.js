@@ -5,3 +5,5 @@ const BASE_URL = "http://localhost:3000";
 let currentCharacter = null;
 // Function to fetch and display all characters in the character bar
 function loadCharacters() {
+    // Select the character-bar div where names will be displayed
+  const characterBar = document.querySelector("#character-bar");
