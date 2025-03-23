@@ -48,3 +48,7 @@ function showCharacterDetails(character) {
 function setupVoteForm() {
     // Select the votes form
   const voteForm = document.querySelector("#votes-form");
+
+  // Add event listener for when the form is submitted
+  voteForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // Stop the form from refreshing the page
