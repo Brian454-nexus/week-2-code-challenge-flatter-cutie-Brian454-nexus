@@ -52,3 +52,7 @@ function setupVoteForm() {
   // Add event listener for when the form is submitted
   voteForm.addEventListener("submit", (e) => {
     e.preventDefault(); // Stop the form from refreshing the page
+
+    // Get the number of votes from the input field
+    const votesInput = document.querySelector("#votes");
+    const additionalVotes = parseInt(votesInput.value); // Convert input to a number
