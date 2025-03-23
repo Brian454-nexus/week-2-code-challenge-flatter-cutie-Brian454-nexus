@@ -112,3 +112,6 @@ function setupCharacterForm() {
     span.innerText = newCharacter.name;
     span.addEventListener("click", () => showCharacterDetails(newCharacter));
     characterBar.appendChild(span);
+
+    // Immediately show the new character's details
+    showCharacterDetails(newCharacter);
