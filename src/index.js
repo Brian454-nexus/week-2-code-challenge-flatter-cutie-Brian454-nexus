@@ -17,3 +17,6 @@ function loadCharacters() {
         // Create a span element for the character's name
         const span = document.createElement("span");
         span.innerText = character.name; // Set the character's name as text
+
+        // Add click event to show details when the span is clicked
+        span.addEventListener("click", () => showCharacterDetails(character));
