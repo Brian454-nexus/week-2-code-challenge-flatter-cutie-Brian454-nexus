@@ -43,3 +43,6 @@ function showCharacterDetails(character) {
     <h4>Total Votes: ${character.votes}</h4>
   `;
 }
+
+// Function to handle adding votes when the form is submitted
+function setupVoteForm() {
