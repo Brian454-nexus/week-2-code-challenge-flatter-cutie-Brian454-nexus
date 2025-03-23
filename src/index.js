@@ -12,3 +12,5 @@ function loadCharacters() {
   fetch(`${BASE_URL}/characters`)
     .then((response) => response.json()) // Convert response to JSON
     .then((characters) => {
+        // Loop through each character in the array
+      characters.forEach((character) => {
