@@ -98,3 +98,7 @@ function setupCharacterForm() {
     const characterForm = document.querySelector("#character-form");
     characterForm.addEventListener("submit", (e) => {
       e.preventDefault(); // Stop form from refreshing
+
+      // Get the name and image from the form inputs
+    const name = document.querySelector("#name").value;
+    const image = document.querySelector("#image-url").value;
