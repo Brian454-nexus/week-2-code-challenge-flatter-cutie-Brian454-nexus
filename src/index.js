@@ -66,3 +66,8 @@ function setupVoteForm() {
       const votesDisplay = document.querySelector("#detailed-info h4");
       votesDisplay.innerText = `Total Votes: ${currentCharacter.votes}`;
     }
+
+    // Clear the input field after submission
+    voteForm.reset();
+  });
+}
