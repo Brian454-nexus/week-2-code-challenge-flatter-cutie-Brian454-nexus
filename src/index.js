@@ -131,3 +131,6 @@ function setupVoteFormWithPersistence() {
     voteForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const additionalVotes = parseInt(document.querySelector("#votes").value);
+  
+      if (currentCharacter && !isNaN(additionalVotes)) {
+        currentCharacter.votes += additionalVotes;
