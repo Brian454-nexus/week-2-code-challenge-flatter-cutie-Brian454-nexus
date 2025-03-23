@@ -134,3 +134,11 @@ function setupVoteFormWithPersistence() {
   
       if (currentCharacter && !isNaN(additionalVotes)) {
         currentCharacter.votes += additionalVotes;
+
+        // Update the server with a PATCH request
+      fetch(`${BASE_URL}/characters/${currentCharacter.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ votes: currentCharacter.votes }),
+      })
+        .then(() => {
