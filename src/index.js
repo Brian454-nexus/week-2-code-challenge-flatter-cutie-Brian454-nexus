@@ -80,3 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set up the vote form functionality
   setupVoteForm();
 });
+
+// Function to reset votes when the reset button is clicked
+function setupResetButton() {
+    const resetButton = document.querySelector("#reset-btn");
+    resetButton.addEventListener("click", () => {
+      if (currentCharacter) {
+        currentCharacter.votes = 0; // Reset votes to 0
+        const votesDisplay = document.querySelector("#detailed-info h4");
+        votesDisplay.innerText = `Total Votes: ${currentCharacter.votes}`; // Update display
+      }
+    });
+  }
