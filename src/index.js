@@ -28,15 +28,18 @@ function showCharacterDetails(character) {
   // Update the currentCharacter so we know who is being displayed
   currentCharacter = character;
 
-  // Select the detailed-info div where details will be shown
-  const detailedInfo = document.querySelector("#detailed-info");
+  // Update the character's name
+  const nameElement = document.querySelector("#name");
+  nameElement.innerText = character.name;
 
-  // Update the div with the character's details
-  detailedInfo.innerHTML = `
-    <p>${character.name}</p>
-    <img src="${character.image}" alt="${character.name}">
-    <h4>Total Votes: ${character.votes}</h4>
-  `;
+  // Update the character's image
+  const imageElement = document.querySelector("#image");
+  imageElement.src = character.image;
+  imageElement.alt = character.name;
+
+  // Update the character's votes
+  const voteCountElement = document.querySelector("#vote-count");
+  voteCountElement.innerText = character.votes;
 }
 
 // Function to handle adding votes when the form is submitted
