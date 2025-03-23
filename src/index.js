@@ -59,3 +59,5 @@ function setupVoteForm() {
 
     // Check if a character is selected and the input is valid
     if (currentCharacter && !isNaN(additionalVotes)) {
+        // Add the new votes to the current character's total
+      currentCharacter.votes += additionalVotes;
