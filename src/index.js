@@ -46,3 +46,5 @@ function showCharacterDetails(character) {
 
 // Function to handle adding votes when the form is submitted
 function setupVoteForm() {
+    // Select the votes form
+  const voteForm = document.querySelector("#votes-form");
