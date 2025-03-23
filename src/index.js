@@ -142,3 +142,12 @@ function setupVoteFormWithPersistence() {
         body: JSON.stringify({ votes: currentCharacter.votes }),
       })
         .then(() => {
+            // Update the UI after server update
+          const votesDisplay = document.querySelector("#detailed-info h4");
+          votesDisplay.innerText = `Total Votes: ${currentCharacter.votes}`;
+        })
+        .catch((error) => console.error("Error updating votes:", error));
+    }
+    voteForm.reset();
+  });
+}
