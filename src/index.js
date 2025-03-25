@@ -8,8 +8,16 @@ function loadCharacters() {
   const characterBar = document.querySelector("#character-bar");
 
   fetch(`${BASE_URL}/characters`)
-    .then((response) => response.json())
-    .then((characters) => {
+    .then((response) => {
+      if (!response.ok) {
+        // If the API is unavailable, fallback to local data
+        console.warn("API unavailable. Loading local data...");
+        return Promise.resolve({ fallback: true });
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const characters = data.fallback ? getLocalCharacters() : data;
       characters.forEach((character) => {
         const span = document.createElement("span");
         span.innerText = character.name;
@@ -21,6 +29,45 @@ function loadCharacters() {
       console.error("Error fetching characters:", error);
       alert("Failed to load characters. Please try again later.");
     });
+}
+
+// Fallback function to get local characters
+function getLocalCharacters() {
+  return [
+    {
+      id: 1,
+      name: "Mr. Cute",
+      image:
+        "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2MybXBjZnhzYW16Nmo5b2hkcm50bmRvZ2V5ZWtobDRxOTNsa2hsOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hqgD6bocRHhEjamBPA/giphy.gif",
+      votes: 0,
+    },
+    {
+      id: 2,
+      name: "Mx. Monkey",
+      image:
+        "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXptYm5yNjF6Njd1NDBsaDY5a3J0cWZyaTh1d3BkNWkwaHV6cGw4aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kZ47z1xYuiAjaxWrGf/giphy.gif",
+      votes: 0,
+    },
+    {
+      id: 3,
+      name: "Ms. Zebra",
+      image: "https://media2.giphy.com/media/20G9uNqE3K4dRjCppA/source.gif",
+      votes: 0,
+    },
+    {
+      id: 4,
+      name: "Dr. Lion",
+      image:
+        "http://bestanimations.com/Animals/Mammals/Cats/Lions/animated-lion-gif-11.gif",
+      votes: 0,
+    },
+    {
+      id: 5,
+      name: "Mme. Panda",
+      image: "https://media.giphy.com/media/ALalVMOVR8Qw/giphy.gif",
+      votes: 0,
+    },
+  ];
 }
 
 // Function to display a character's details in the detailed-info div
